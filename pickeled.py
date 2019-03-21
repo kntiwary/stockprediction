@@ -37,12 +37,13 @@ y = np.array(df['label'])
 
 x_train, x_test, y_train, y_test = cross_validation.train_test_split(x, y, test_size=0.2)
 
-# clf = LinearRegression(n_jobs=-1)  # multithreading
-# clf.fit(x_train, y_train)
-# with open("linearregression.pickle",'wb') as f:
-#     pickle.dump(clf,f)
-pickle_in = open("linearregression.pickle",'rb')
-clf = pickle_in
+clf = LinearRegression(n_jobs=-1)  # multithreading
+clf.fit(x_train, y_train)
+
+with open('linearregression.pickle','wb') as f:
+    pickle.dump(clf,f)
+pickle_in = open('linearregression.pickle','rb')
+clf = pickle.load(pickle_in)
 
 accuracy = clf.score(x_test, y_test)
 forecast_set = clf.predict(x_lately)
