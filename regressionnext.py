@@ -14,6 +14,8 @@ style.use('ggplot')
 
 # url = https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BSE:TCS&apikey=Z2RJFYNYL3R2IDQT@datatype=csv
 # url = https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=ICICIBANK:TCS&apikey=Z2RJFYNYL3R2IDQT@datatype=csv
+import json
+
 
 df =pd.read_csv("daily_BSE_ICICIBANK.csv")
 # print(df.count())
